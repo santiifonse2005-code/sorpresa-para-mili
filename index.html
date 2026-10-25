@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Para Mili 💗</title>
+<style>
+:root{--pink:#ff6f9f;--rose:#ffe3ec;--deep:#a52f5a;--cream:#fff8fb}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;background:linear-gradient(160deg,#fff7fb,#ffe0eb);color:#633047;text-align:center}
+main{max-width:760px;margin:auto;padding:24px 16px 48px}
+.hero{padding:35px 18px 26px;border:1px solid #ffc0d4;border-radius:28px;background:#ffffffbd;box-shadow:0 12px 35px #bd47701c}
+h1{font-size:clamp(2.2rem,8vw,4rem);color:var(--deep);margin:8px 0}
+.subtitle{font-size:1.12rem}
+.heart{font-size:2rem;animation:pulse 1.5s infinite}
+@keyframes pulse{50%{transform:scale(1.16)}}
+section{margin-top:22px;padding:24px 18px;border-radius:24px;background:#fffdfedb;box-shadow:0 8px 24px #bd477018}
+h2{color:var(--deep);margin-top:0}
+.photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.photos img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;border:3px solid white;box-shadow:0 4px 12px #8c3c571f}
+.note{font-family:Arial,sans-serif;font-size:.9rem;color:#88566b}
+.letter{font-size:1.12rem;line-height:1.8;text-align:left;white-space:pre-line}
+.counter{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.unit{background:#fff0f5;border:1px solid #ffd0df;border-radius:14px;padding:13px 4px}
+.number{display:block;font:700 clamp(1.35rem,5vw,2rem) Arial,sans-serif;color:#b52d61}
+.label{font: .75rem Arial,sans-serif}
+footer{padding:26px 8px 0;color:#9d5270}
+@media(max-width:420px){.counter{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <div class="heart">💗</div>
+    <p class="subtitle">Una pequeña sorpresa para</p>
+    <h1>Mili</h1>
+    <p class="subtitle">De parte de tu Santi, con todo mi amor 🌹</p>
+    <p>Desde el 25 de mayo de 2026, mi historia favorita es la nuestra.</p>
+  </header>
+
+  <section>
+    <h2>📸 Nuestros momentos</h2>
+    <p class="note">Cuando subas tus fotos, ponelas en la carpeta <b>fotos</b> con estos nombres: foto1.jpg, foto2.jpg… foto7.jpg.</p>
+    <div class="photos">
+      <img src="fotos/foto1.jpg" alt="Nuestro momento 1">
+      <img src="fotos/foto2.jpg" alt="Nuestro momento 2">
+      <img src="fotos/foto3.jpg" alt="Nuestro momento 3">
+      <img src="fotos/foto4.jpg" alt="Nuestro momento 4">
+      <img src="fotos/foto5.jpg" alt="Nuestro momento 5">
+      <img src="fotos/foto6.jpg" alt="Nuestro momento 6">
+      <img src="fotos/foto7.jpg" alt="Nuestro momento 7">
+    </div>
+  </section>
+
+  <section>
+    <h2>💌 Una carta para vos</h2>
+    <div class="letter">Mi Mili hermosa:
+
+No sé si estas palabras alcanzan para explicar todo lo que siento por vos, pero quiero que sepas que desde que llegaste a mi vida, mis días tienen algo más lindo. Me encanta compartir momentos con vos, abrazarte, hacerte reír y seguir creando recuerdos juntos.
+
+Gracias por ser mi compañera, por tu cariño y por cada pequeño instante que se vuelve especial cuando estoy con vos. Quiero seguir eligiéndote, cuidándote y construyendo nuestra historia, paso a paso.
+
+Sos una de las cosas más lindas que me pasó. Te amo muchísimo, mi amor.
+
+Para siempre tuyo,
+Santi 💗</div>
+  </section>
+
+  <section>
+    <h2>⏳ Nuestro tiempo juntos</h2>
+    <p>Desde el 25/05/2026</p>
+    <div class="counter">
+      <div class="unit"><span class="number" id="days">0</span><span class="label">DÍAS</span></div>
+      <div class="unit"><span class="number" id="hours">0</span><span class="label">HORAS</span></div>
+      <div class="unit"><span class="number" id="minutes">0</span><span class="label">MINUTOS</span></div>
+      <div class="unit"><span class="number" id="seconds">0</span><span class="label">SEGUNDOS</span></div>
+    </div>
+  </section>
+  <footer>Hecho con amor para Mili 💞<br>25 · 05 · 2026</footer>
+</main>
+<script>
+const start = new Date(2026, 4, 25, 0, 0, 0);
+function update(){
+  let diff=Math.max(0,Date.now()-start.getTime());
+  const d=Math.floor(diff/86400000); diff%=86400000;
+  const h=Math.floor(diff/3600000); diff%=3600000;
+  const m=Math.floor(diff/60000); const s=Math.floor((diff%60000)/1000);
+  document.getElementById('days').textContent=d;
+  document.getElementById('hours').textContent=h;
+  document.getElementById('minutes').textContent=m;
+  document.getElementById('seconds').textContent=s;
+}
+update();setInterval(update,1000);
+</script>
+</body>
+</html>
